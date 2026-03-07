@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV – Raka Pratama</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --ink:     #0d0d0d;
+      --paper:   #f5f0e8;
+      --accent:  #c8402a;
+      --gold:    #d4a017;
+      --muted:   #7a7060;
+      --divider: #c8bfad;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page-wrapper {
+      position: relative; z-index: 1;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* ═══════════════════════════════
+       HEADER
+    ═══════════════════════════════ */
+    .cv-header {
+      border-top: 5px solid var(--ink);
+      border-bottom: 1px solid var(--divider);
+      padding: 2.5rem 0 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .cv-header::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--gold) 60%, transparent 100%);
+    }
+
+    .name-block {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+
+    .name-block .first { color: var(--ink); }
+    .name-block .last  { color: var(--accent); }
+
+    .tagline {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 100px;
+      padding: 0.3rem 0.8rem;
+      margin: 0.25rem 0.2rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .contact-pill:hover { background: var(--accent); color: #fff; }
+
+    .photo-frame {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--ink);
+      box-shadow: 8px 8px 0 var(--accent);
+      display: block;
+      margin: 0 auto;
+      background: var(--divider);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .photo-placeholder {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--ink) 0%, #3a3028 100%);
+      border: 4px solid var(--ink);
+      box-shadow: 8px 8px 0 var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--paper);
+      margin: 0 auto;
+    }
+
+    /* ═══════════════════════════════
+       SECTION TITLES
+    ═══════════════════════════════ */
+    .sec-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .sec-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--divider);
+    }
+
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ═══════════════════════════════
+       ABOUT / SUMMARY
+    ═══════════════════════════════ */
+    .about-box {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 2rem 2.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-box::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 10rem;
+      line-height: 1;
+      position: absolute;
+      top: -1rem; right: 1.5rem;
+      color: rgba(255,255,255,0.05);
+      pointer-events: none;
+    }
+    .about-box p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+    }
+    .about-box .highlight {
+      color: var(--gold);
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* ═══════════════════════════════
+       EXPERIENCE
+    ═══════════════════════════════ */
+    .exp-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 0 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px dashed var(--divider);
+    }
+    .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .exp-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: right;
+      padding-top: 0.25rem;
+      letter-spacing: 0.08em;
+    }
+
+    .exp-role {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .exp-company {
+      font-size: 0.8rem;
+      font-family: 'DM Mono', monospace;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+    }
+    .exp-desc {
+      font-size: 0.88rem;
+      color: #3a3028;
+      line-height: 1.75;
+    }
+
+    /* ═══════════════════════════════
+       SKILLS
+    ═══════════════════════════════ */
+    .skill-group-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-bar-wrap { margin-bottom: 0.9rem; }
+    .skill-bar-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      margin-bottom: 0.3rem;
+    }
+    .skill-bar-track {
+      height: 5px;
+      background: var(--divider);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--ink), var(--accent));
+      border-radius: 99px;
+      width: 0;
+      transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .skill-tag {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      border: 1px solid var(--ink);
+      padding: 0.25rem 0.65rem;
+      border-radius: 3px;
+      margin: 0.2rem;
+      transition: all 0.2s;
+      cursor: default;
+    }
+    .skill-tag:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    /* ═══════════════════════════════
+       EDUCATION
+    ═══════════════════════════════ */
+    .edu-card {
+      background: white;
+      border: 1px solid var(--divider);
+      border-left: 4px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .edu-card:hover {
+      box-shadow: 4px 4px 0 var(--gold);
+      transform: translate(-2px, -2px);
+    }
+    .edu-degree {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .edu-school {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-family: 'DM Mono', monospace;
+    }
+    .edu-year {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* ═══════════════════════════════
+       SIDE COLUMN CARDS
+    ═══════════════════════════════ */
+    .info-card {
+      background: white;
+      border: 1px solid var(--divider);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--accent);
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      font-family: 'DM Mono', monospace;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    /* ═══════════════════════════════
+       LANG CIRCLES
+    ═══════════════════════════════ */
+    .lang-item { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.6rem; }
+    .lang-dots { display: flex; gap: 4px; }
+    .lang-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--divider);
+    }
+    .lang-dot.filled { background: var(--ink); }
+    .lang-name { font-size: 0.85rem; }
+
+    /* ═══════════════════════════════
+       PORTFOLIO GRID
+    ═══════════════════════════════ */
+    .proj-card {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 1.5rem;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s;
+    }
+    .proj-card:hover { transform: translateY(-4px); }
+    .proj-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 0 40px 40px 0;
+      border-color: transparent var(--accent) transparent transparent;
+    }
+    .proj-card .proj-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .proj-card .proj-desc {
+      font-size: 0.8rem;
+      color: rgba(245,240,232,0.7);
+      line-height: 1.6;
+    }
+    .proj-tag {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.15rem 0.5rem;
+      border-radius: 2px;
+      margin-top: 0.75rem;
+      margin-right: 0.25rem;
+    }
+
+    /* ═══════════════════════════════
+       FOOTER STRIP
+    ═══════════════════════════════ */
+    .cv-footer {
+      border-top: 5px solid var(--ink);
+      padding-top: 1.25rem;
+      margin-top: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .cv-footer .mono {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+    .footer-stripe {
+      height: 4px;
+      background: repeating-linear-gradient(90deg,
+        var(--accent) 0, var(--accent) 12px,
+        var(--gold) 12px, var(--gold) 24px,
+        var(--ink) 24px, var(--ink) 36px,
+        var(--paper) 36px, var(--paper) 48px
+      );
+      margin-top: 1rem;
+    }
+
+    /* ═══════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.25s; }
+    .delay-3 { animation-delay: 0.4s; }
+    .delay-4 { animation-delay: 0.55s; }
+    .delay-5 { animation-delay: 0.7s; }
+
+    /* ═══════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════ */
+    @media (max-width: 576px) {
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-year { text-align: left; margin-bottom: 0.25rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- ──────────────────────────────
+       HEADER
+  ────────────────────────────── -->
+  <header class="cv-header fade-up">
+    <div class="row align-items-center g-4">
+      <div class="col-md-8">
+        <div class="tagline">Curriculum Vitæ — 2025</div>
+        <div class="name-block mt-2">
+          <span class="first">Raka<br></span>
+          <span class="last">Pratama</span>
+        </div>
+        <div class="tagline mt-3">Full-Stack Developer &nbsp;·&nbsp; UI/UX Enthusiast &nbsp;·&nbsp; Open Source Contributor</div>
+        <div class="mt-3">
+          <a href="mailto:raka@example.com" class="contact-pill"><i class="bi bi-envelope-fill"></i> raka@example.com</a>
+          <a href="tel:+6281234567890"       class="contact-pill"><i class="bi bi-telephone-fill"></i> +62 812-3456-7890</a>
+          <a href="#"                        class="contact-pill"><i class="bi bi-linkedin"></i> linkedin.com/in/raka</a>
+          <a href="#"                        class="contact-pill"><i class="bi bi-github"></i> github.com/rakadev</a>
+          <a href="#"                        class="contact-pill"><i class="bi bi-geo-alt-fill"></i> Bandung, Indonesia</a>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="photo-placeholder">RP</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ──────────────────────────────
+       MAIN GRID
+  ────────────────────────────── -->
+  <div class="row g-4">
+
+    <!-- LEFT / MAIN COLUMN -->
+    <div class="col-lg-8">
+
+      <!-- ABOUT -->
+      <section class="mb-4 fade-up delay-1">
+        <div class="sec-label">01 &nbsp; Tentang Saya</div>
+        <div class="about-box">
+          <p>
+            Saya adalah seorang <span class="highlight">pengembang perangkat lunak</span> yang bersemangat
+            dengan pengalaman lebih dari 3 tahun dalam merancang dan membangun aplikasi web modern.
+            Saya percaya bahwa kode yang baik bukan hanya yang berjalan sempurna, tetapi juga
+            yang <span class="highlight">mudah dibaca, dipelihara, dan dipahami</span> oleh orang lain.
+            Di luar pekerjaan, saya aktif berkontribusi pada komunitas open-source dan senang
+            berbagi ilmu melalui tulisan teknis.
+          </p>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="mb-4 fade-up delay-2">
+        <div class="sec-label">02 &nbsp; Pengalaman Kerja</div>
+
+        <div class="exp-item">
+          <div class="exp-year">2023<br>—<br>Skrg</div>
+          <div>
+            <div class="exp-role">Senior Frontend Developer</div>
+            <div class="exp-company">PT DIGITAL NUSANTARA &nbsp;·&nbsp; Bandung</div>
+            <div class="exp-desc">
+              Memimpin tim frontend beranggotakan 5 orang dalam pengembangan platform SaaS
+              e-commerce. Mengimplementasikan arsitektur micro-frontend dengan React dan TypeScript,
+              meningkatkan performa halaman utama sebesar 40%.
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year">2022<br>—<br>2023</div>
+          <div>
+            <div class="exp-role">Full-Stack Developer</div>
+            <div class="exp-company">STARTUP KREASI &nbsp;·&nbsp; Jakarta (Remote)</div>
+            <div class="exp-desc">
+              Membangun REST API dengan Node.js dan Express, serta antarmuka pengguna dengan
+              Vue 3. Bertanggung jawab atas CI/CD pipeline menggunakan GitHub Actions dan deployment
+              ke AWS EC2.
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year">2021<br>—<br>2022</div>
+          <div>
+            <div class="exp-role">Junior Web Developer</div>
+            <div class="exp-company">BIRO TEKNOLOGI UNIV &nbsp;·&nbsp; Bandung</div>
+            <div class="exp-desc">
+              Merancang dan mengembangkan portal akademik mahasiswa menggunakan Laravel dan
+              Bootstrap. Menangani lebih dari 8.000 pengguna aktif per hari.
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year">2020</div>
+          <div>
+            <div class="exp-role">Intern — Frontend Dev</div>
+            <div class="exp-company">AGENCY PIXELS &nbsp;·&nbsp; Bandung</div>
+            <div class="exp-desc">
+              Membuat landing page klien dan melakukan optimasi SEO on-page. Berkolaborasi
+              langsung dengan desainer UI/UX dalam implementasi Figma ke kode.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="mb-4 fade-up delay-3">
+        <div class="sec-label">03 &nbsp; Proyek Unggulan</div>
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <div class="proj-card">
+              <div class="proj-title">KasirKu POS</div>
+              <div class="proj-desc">Aplikasi kasir berbasis web real-time dengan sinkronisasi multi-device menggunakan WebSocket.</div>
+              <div>
+                <span class="proj-tag">React</span>
+                <span class="proj-tag">Node.js</span>
+                <span class="proj-tag">Socket.io</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="proj-card">
+              <div class="proj-title">OpenLearn LMS</div>
+              <div class="proj-desc">Platform e-learning open-source dengan fitur video streaming adaptif dan quiz interaktif.</div>
+              <div>
+                <span class="proj-tag">Vue 3</span>
+                <span class="proj-tag">Laravel</span>
+                <span class="proj-tag">FFmpeg</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="proj-card">
+              <div class="proj-title">DataVis CLI</div>
+              <div class="proj-desc">Alat command-line untuk visualisasi data CSV langsung di terminal dengan grafik ASCII art.</div>
+              <div>
+                <span class="proj-tag">Python</span>
+                <span class="proj-tag">Rich</span>
+                <span class="proj-tag">Pandas</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="proj-card">
+              <div class="proj-title">PortalDesa</div>
+              <div class="proj-desc">Sistem informasi desa terpadu yang digunakan oleh 12 desa di Jawa Barat sebagai solusi administrasi digital.</div>
+              <div>
+                <span class="proj-tag">PHP</span>
+                <span class="proj-tag">MySQL</span>
+                <span class="proj-tag">Bootstrap 5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="fade-up delay-4">
+        <div class="sec-label">04 &nbsp; Pendidikan</div>
+
+        <div class="edu-card">
+          <div class="row align-items-center">
+            <div class="col-sm-8">
+              <div class="edu-degree">S1 Teknik Informatika</div>
+              <div class="edu-school">UNIVERSITAS KOMPUTER INDONESIA (UNIKOM)</div>
+            </div>
+            <div class="col-sm-4 text-sm-end mt-2 mt-sm-0">
+              <div class="edu-year">2018 — 2022</div>
+              <div class="mt-1"><span class="badge" style="background:var(--ink);font-family:'DM Mono',monospace;font-size:0.65rem;">IPK 3.82 / 4.00</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="row align-items-center">
+            <div class="col-sm-8">
+              <div class="edu-degree">Sertifikasi AWS Cloud Practitioner</div>
+              <div class="edu-school">AMAZON WEB SERVICES</div>
+            </div>
+            <div class="col-sm-4 text-sm-end mt-2 mt-sm-0">
+              <div class="edu-year">2023</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="row align-items-center">
+            <div class="col-sm-8">
+              <div class="edu-degree">SMK Rekayasa Perangkat Lunak</div>
+              <div class="edu-school">SMKN 4 BANDUNG</div>
+            </div>
+            <div class="col-sm-4 text-sm-end mt-2 mt-sm-0">
+              <div class="edu-year">2015 — 2018</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="col-lg-4 fade-up delay-3">
+
+      <!-- STATS -->
+      <div class="info-card mb-3">
+        <div class="sec-label" style="font-size:0.6rem;">Stats</div>
+        <div class="row g-2 text-center">
+          <div class="col-4">
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Tahun<br>Exp.</div>
+          </div>
+          <div class="col-4">
+            <div class="stat-number">24</div>
+            <div class="stat-label">Proyek<br>Selesai</div>
+          </div>
+          <div class="col-4">
+            <div class="stat-number">8k</div>
+            <div class="stat-label">Baris<br>Code/mo</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILLS BARS -->
+      <div class="info-card mb-3">
+        <div class="sec-label" style="font-size:0.6rem;">Keahlian Teknis</div>
+
+        <div class="skill-group-label">Frontend</div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-header"><span>React / Next.js</span><span>90%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-header"><span>Vue 3</span><span>82%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-header"><span>TypeScript</span><span>78%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+        </div>
+
+        <div class="skill-group-label mt-3">Backend</div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-header"><span>Node.js / Express</span><span>85%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-header"><span>Laravel / PHP</span><span>80%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-header"><span>PostgreSQL</span><span>75%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+        </div>
+
+        <div class="skill-group-label mt-3">Tools & Lainnya</div>
+        <div>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">CI/CD</span>
+          <span class="skill-tag">Tailwind</span>
+          <span class="skill-tag">Bootstrap</span>
+          <span class="skill-tag">REST API</span>
+        </div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="info-card mb-3">
+        <div class="sec-label" style="font-size:0.6rem;">Bahasa</div>
+        <div class="lang-item">
+          <div class="lang-dots">
+            <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+            <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+            <div class="lang-dot filled"></div>
+          </div>
+          <div class="lang-name">Bahasa Indonesia</div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-dots">
+            <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+            <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+            <div class="lang-dot"></div>
+          </div>
+          <div class="lang-name">English</div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-dots">
+            <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+            <div class="lang-dot"></div><div class="lang-dot"></div>
+            <div class="lang-dot"></div>
+          </div>
+          <div class="lang-name">Bahasa Sunda</div>
+        </div>
+      </div>
+
+      <!-- INTERESTS -->
+      <div class="info-card">
+        <div class="sec-label" style="font-size:0.6rem;">Minat</div>
+        <div>
+          <span class="skill-tag"><i class="bi bi-book"></i> Open Source</span>
+          <span class="skill-tag"><i class="bi bi-camera"></i> Fotografi</span>
+          <span class="skill-tag"><i class="bi bi-controller"></i> Game Dev</span>
+          <span class="skill-tag"><i class="bi bi-music-note"></i> Musik</span>
+          <span class="skill-tag"><i class="bi bi-bicycle"></i> Bersepeda</span>
+          <span class="skill-tag"><i class="bi bi-pencil"></i> Menulis</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="cv-footer fade-up delay-5">
+    <div class="mono">Raka Pratama — CV 2025</div>
+    <div class="mono">Dibuat dengan Bootstrap 5 &nbsp;·&nbsp; Sesi Praktikum</div>
+  </footer>
+  <div class="footer-stripe mt-2"></div>
+
+</div><!-- /page-wrapper -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Animate skill bars on load
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelectorAll('.skill-bar-fill').forEach(el => {
+        el.style.width = el.dataset.width + '%';
+      });
+    }, 600);
+  });
+</script>
+</body>
+</html>
