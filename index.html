@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV – Bagas Adhiel Firmansyah</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS terpisah per komponen -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/team.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+
+<body>
+
+  <!-- ================================================
+     NAVBAR
+================================================ -->
+  <nav class="main-navbar">
+    <div class="navbar-inner">
+      <a href="#top" class="navbar-brand-custom">
+        CV &nbsp;<span>Bagas Adhiel Firmansyah</span>
+      </a>
+      <div class="nav-links">
+        <a href="#tentang" class="nav-link-custom">Tentang</a>
+        <a href="#pengalaman" class="nav-link-custom">Pengalaman</a>
+        <a href="#pendidikan" class="nav-link-custom">Pendidikan</a>
+        <a href="#team" class="nav-link-custom">Team</a>
+      </div>
+      <button class="navbar-toggler-custom" onclick="toggleMenu()">
+        <i class="bi bi-list" id="menuIcon"></i>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#tentang" onclick="toggleMenu()">Tentang</a>
+      <a href="#pengalaman" onclick="toggleMenu()">Pengalaman</a>
+      <a href="#pendidikan" onclick="toggleMenu()">Pendidikan</a>
+      <a href="#team" onclick="toggleMenu()">Team</a>
+    </div>
+  </nav>
+
+  <!-- ================================================
+     CV CONTENT
+================================================ -->
+  <div class="page-wrapper" id="top">
+
+    <!-- HEADER -->
+    <header class="cv-header fade-up">
+      <div class="row align-items-center g-4">
+        <div class="col-md-8">
+          <div class="tagline">Curriculum Vitae — 2026</div>
+          <div class="name-block mt-2">
+            <span class="first">Bagas </span><span class="last">Adhiel Firmansyah</span>
+          </div>
+          <div class="tagline mt-3">Desain Grafis &nbsp;·&nbsp; Konten Kreator &nbsp;·&nbsp; Informatika</div>
+          <div class="mt-3">
+            <a href="mailto:bagasadhielfirmansyah@gmail.com" class="contact-pill">
+              <i class="bi bi-envelope-fill"></i> bagasadhielfirmansyah@gmail.com
+            </a>
+            <a href="https://wa.me/6285161866864" class="contact-pill">
+              <i class="bi bi-telephone-fill"></i> 085161866864
+            </a>
+            <a href="https://instagram.com/dhiiluxx_" class="contact-pill">
+              <i class="bi bi-instagram"></i> @dhiiluxx_
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="profile-photo-wrap mx-auto">
+            <img src="https://i.ibb.co.com/kspLnb6Y/AMP00028.jpg" alt="Foto Bagas Adhiel Firmansyah"
+              class="profile-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="profile-photo-fallback" style="display:none;">BAF</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN GRID -->
+    <div class="row g-4">
+
+      <!-- KOLOM KIRI -->
+      <div class="col-lg-8">
+
+        <!-- 01 TENTANG SAYA -->
+        <section id="tentang" class="mb-4 reveal">
+          <div class="sec-label">01 &nbsp; Tentang Saya</div>
+          <div class="about-box">
+            <p>
+              Saya adalah seorang yang passionate di bidang <span class="highlight">desain grafis</span> dan
+              <span class="highlight">pembuatan konten kreatif</span>. Saya senang menciptakan visual yang menarik,
+              mulai dari poster, ilustrasi digital, hingga konten media. Di luar itu,
+              saya juga gemar <span class="highlight">bermain game</span> yang melatih strategi dan kreativitas
+              berpikir.
+            </p>
+            <p class="mt-3">
+              Saat ini saya sedang menempuh pendidikan di perguruan tinggi sebagai mahasiswa
+              <span class="highlight">Jurusan Informatika</span>. Saya percaya kombinasi antara ilmu teknologi
+              dan kreativitas desain akan membawa saya menjadi seorang
+              <span class="highlight">pengembang kreatif</span> yang mampu menciptakan produk digital yang indah
+              sekaligus fungsional.
+            </p>
+          </div>
+        </section>
+
+        <!-- 02 PENGALAMAN & ORGANISASI -->
+        <section id="pengalaman" class="mb-4 reveal">
+          <div class="sec-label">02 &nbsp; Pengalaman &amp; Organisasi</div>
+
+          <div class="exp-item">
+            <div class="exp-year">2025<br>— Sekarang</div>
+            <div>
+              <div class="exp-role">Pengurus UKM Intermedia</div>
+              <div class="exp-company">DIVISI KONTEN KREATOR</div>
+              <div class="exp-desc">
+                Bertanggung jawab atas manajemen UKM sehari-hari. Meliputi:
+                <ul>
+                  <li>membuat desain grafis, seperti poster</li>
+                  <li>manajemen media sosial UKM</li>
+                  <li>dokumentasi kegiatan UKM</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-year">2025<br>— Sekarang</div>
+            <div>
+              <div class="exp-role">Roblox Developer</div>
+              <div class="exp-company">BUILDER</div>
+              <div class="exp-desc">
+                Membangun dunia virtual imersif menggunakan Roblox Studio. Meliputi:
+                <ul>
+                  <li>merancang environment 3D</li>
+                  <li>membuat aset dan model bangunan secara detail</li>
+                  <li>berkolaborasi dengan scripter dan desainer dalam satu tim</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-year">Oktober 2025</div>
+            <div>
+              <div class="exp-role">IMAGINE</div>
+              <div class="exp-company">DIVISI PDD</div>
+              <div class="exp-desc">
+                Ditunjuk kembali sebagai anggota PDD, bertanggung jawab atas desain grafis dan dokumentasi acara.
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-year">Oktober 2025</div>
+            <div>
+              <div class="exp-role">Bina Desa</div>
+              <div class="exp-company">DIVISI PERLENGKAPAN</div>
+              <div class="exp-desc">
+                Anggota divisi perlengkapan. Membangun dasar kuat dalam kerja sama dan komunikasi tim.
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-year">Juni 2025</div>
+            <div>
+              <div class="exp-role">Intermedia Bakti Masyarakat</div>
+              <div class="exp-company">DIVISI PDD</div>
+              <div class="exp-desc">
+                Pengalaman awal di UKM sebagai divisi PDD, bertanggung jawab atas desain grafis dan dokumentasi.
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-year">2023 — 2024</div>
+            <div>
+              <div class="exp-role">Brand Ambassador MSLA</div>
+              <div class="exp-company">KETUA</div>
+              <div class="exp-desc">
+                Brand Ambassador Moonton Student Leader (MSL). Membangun dasar kepemimpinan, tanggung jawab, dan
+                komunikasi tim.
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- 03 PENDIDIKAN -->
+        <section id="pendidikan" class="mb-4 reveal">
+          <div class="sec-label">03 &nbsp; Pendidikan</div>
+
+          <div class="edu-card">
+            <div class="row align-items-start">
+              <div class="col-sm-8">
+                <div class="edu-degree">Universitas Amikom Purwokerto</div>
+                <div class="edu-school">PRODI INFORMATIKA</div>
+              </div>
+              <div class="col-sm-4 text-sm-end mt-1 mt-sm-0">
+                <div class="edu-year">2024 — Sekarang</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-card">
+            <div class="row align-items-start">
+              <div class="col-sm-8">
+                <div class="edu-degree">SMK Komputama Majenang</div>
+                <div class="edu-school">JURUSAN TJKT</div>
+              </div>
+              <div class="col-sm-4 text-sm-end mt-1 mt-sm-0">
+                <div class="edu-year">2021 — 2024</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /col-lg-8 -->
+
+      <!-- SIDEBAR -->
+      <div class="col-lg-4 reveal r2">
+
+        <!-- KEAHLIAN -->
+        <div class="info-card">
+          <div class="sec-label" style="font-size:0.6rem;">Keahlian</div>
+          <div class="skill-row">
+            <span class="skill-row-name">Desain Grafis</span>
+            <div class="skill-dots">
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-row-name">Figma / UI Design</span>
+            <div class="skill-dots">
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-row-name">Social Media Manajer</span>
+            <div class="skill-dots">
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-row-name">Fotografi &amp; Videografi</span>
+            <div class="skill-dots">
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-row-name">Video Editing</span>
+            <div class="skill-dots">
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot"></div>
+              <div class="skill-dot"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-row-name">Copywriting</span>
+            <div class="skill-dots">
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot filled"></div>
+              <div class="skill-dot"></div>
+              <div class="skill-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MINAT -->
+        <div class="info-card">
+          <div class="sec-label" style="font-size:0.6rem;">Minat</div>
+          <span class="int-tag"><i class="bi bi-egg-fried"></i> Kuliner</span>
+          <span class="int-tag"><i class="bi bi-controller"></i> Game</span>
+          <span class="int-tag"><i class="bi bi-palette"></i> Desain</span>
+          <span class="int-tag"><i class="bi bi-music-note-beamed"></i> Musik</span>
+        </div>
+
+        <!-- BAHASA -->
+        <div class="info-card">
+          <div class="sec-label" style="font-size:0.6rem;">Bahasa</div>
+          <div class="lang-item">
+            <div class="lang-dots">
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+            </div>
+            <div class="lang-name">Indonesia</div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-dots">
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot"></div>
+            </div>
+            <div class="lang-name">Inggris</div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-dots">
+              <div class="lang-dot filled"></div>
+              <div class="lang-dot"></div>
+              <div class="lang-dot"></div>
+              <div class="lang-dot"></div>
+              <div class="lang-dot"></div>
+            </div>
+            <div class="lang-name">Jepang</div>
+          </div>
+        </div>
+
+      </div><!-- /sidebar -->
+
+    </div><!-- /row -->
+  </div><!-- /page-wrapper -->
+
+  <!-- ================================================
+     TEAM SECTION
+================================================ -->
+  <section class="team-section" id="team">
+
+    <div class="team-header-row reveal">
+      <div class="row align-items-end">
+        <div class="col-lg-7">
+          <div class="team-section-label">05 &nbsp; Tim Kami</div>
+          <div class="team-heading">Kenali <span>Anggota</span><br>Tim Kelompok</div>
+          <p class="team-sub">
+            Mahasiswa Informatika Universitas Amikom Purwokerto.
+            Klik kartu untuk melihat CV masing-masing anggota.
+          </p>
+        </div>
+        <div class="col-lg-5 text-lg-end mt-3 mt-lg-0">
+          <span class="team-hint">
+            <i class="bi bi-cursor-fill me-1" style="color:var(--accent);"></i>
+            Klik kartu → Lihat CV
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-carousel-outer reveal r2">
+      <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-inner">
+
+          <!-- SLIDE 1 -->
+          <div class="carousel-item active">
+            <div class="row g-3 px-1">
+
+              <div class="col-md-4 col-sm-6">
+                <!-- Ganti href dengan path CV masing-masing anggota -->
+                <a href="cv-bagas.html" class="team-card-link" target="_blank">
+                  <div class="team-card">
+                    <span class="team-cv-badge"><i class="bi bi-box-arrow-up-right me-1"></i>Lihat CV</span>
+                    <div class="team-avatar-wrap">
+                      <img src="https://i.ibb.co.com/kspLnb6Y/AMP00028.jpg" alt="Bagas" class="team-avatar-img"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                      <div class="team-avatar-fallback"
+                        style="display:none;background:linear-gradient(135deg,#5c3d2e,#2c1a0e);">BAF</div>
+                    </div>
+                    <div class="team-name">Bagas Adhiel F.</div>
+                    <div class="team-role">Projek Manajer</div>
+                    <div class="team-nim">NIM · 24SA11A045</div>
+                    <div class="team-desc">Bertanggung jawab mengkoordinasi tim dan memastikan proyek berjalan sesuai
+                      rencana. Senang dalam desain grafis dan pembuatan konten kreatif.
+
+                    </div>
+
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <a href="cv-anggota2.html" class="team-card-link" target="_blank">
+                  <div class="team-card">
+                    <span class="team-cv-badge"><i class="bi bi-box-arrow-up-right me-1"></i>Lihat CV</span>
+                    <div class="team-avatar-wrap">
+                      <img src="https://i.ibb.co.com/0pq9TXsd/20260309-163804.png" alt="Akhdani" class="team-avatar-img"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                      <div class="team-avatar-fallback"
+                        style="display:none;background:linear-gradient(135deg,#2a4a8b,#0a1a4a);">AWR</div>
+                    </div>
+                    <div class="team-name">Akhdani Wafiq Ramadhan</div>
+                    <div class="team-role">UI/UX Designer</div>
+                    <div class="team-nim">NIM · 24SA11A002</div>
+                    <div class="team-desc">Merancang tampilan antarmuka yang intuitif dan estetis. Berfokus pada
+                      pengalaman pengguna yang nyaman dan desain yang konsisten..</div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-4 col-sm-6">
+                <a href="cv-anggota3.html" class="team-card-link" target="_blank">
+                  <div class="team-card">
+                    <span class="team-cv-badge"><i class="bi bi-box-arrow-up-right me-1"></i>Lihat CV</span>
+                    <div class="team-avatar-wrap">
+                      <img src="https://i.ibb.co.com/HTLvsh1Y/profile.jpg" alt="Satria" class="team-avatar-img"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                      <div class="team-avatar-fallback"
+                        style="display:none;background:linear-gradient(135deg,#1a6b3a,#0a3a1a);">SH</div>
+                    </div>
+                    <div class="team-name">Satria Hannandito</div>
+                    <div class="team-role">Frontend Developer</div>
+                    <div class="team-nim">NIM · 24SA11A089</div>
+                    <div class="team-desc">Mengubah desain menjadi tampilan web yang responsif dan interaktif. Teliti
+                      dalam detail visual dan performa halaman.</div>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <div class="carousel-item">
+            <div class="row g-3 px-1">
+
+              <div class="col-md-4 col-sm-6">
+                <a href="cv-anggota4.html" class="team-card-link" target="_blank">
+                  <div class="team-card">
+                    <span class="team-cv-badge"><i class="bi bi-box-arrow-up-right me-1"></i>Lihat CV</span>
+                    <div class="team-avatar-wrap">
+                      <img src="https://i.ibb.co.com/YTFmgTYH/f1.jpg" alt="Dayyan" class="team-avatar-img"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                      <div class="team-avatar-fallback"
+                        style="display:none;background:linear-gradient(135deg,#6b1a3a,#3a0a1a);">MDF</div>
+                    </div>
+                    <div class="team-name">Muhammad Dayyan Al Farikh</div>
+                    <div class="team-role">Backend Developer & Tester</div>
+                    <div class="team-nim">NIM · 24SA11A082</div>
+                    <div class="team-desc">Membangun logika server dan mengelola database agar sistem berjalan stabil.
+                      Juga berperan dalam pengujian fungsionalitas aplikasi.</div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-4 col-sm-6">
+                <a href="cv-anggota5.html" class="team-card-link" target="_blank">
+                  <div class="team-card">
+                    <span class="team-cv-badge"><i class="bi bi-box-arrow-up-right me-1"></i>Lihat CV</span>
+                    <div class="team-avatar-wrap">
+                      <img
+                        src="https://ui-avatars.com/api/?name=Yusuf+Fikri+Safiyulloh&size=160&background=6b5a0a&color=f5f0e8&bold=true&font-size=0.35"
+                        alt="Yusuf" class="team-avatar-img"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                      <div class="team-avatar-fallback"
+                        style="display:none;background:linear-gradient(135deg,#6b5a0a,#3a3008);">YFS</div>
+                    </div>
+                    <div class="team-name">Yusuf Fikri Safiyulloh</div>
+                    <div class="team-role">Backend Developer & Tester</div>
+                    <div class="team-nim">NIM · 24SA11A009</div>
+                    <div class="team-desc">Mengembangkan fitur sisi server dan memastikan kualitas aplikasi melalui
+                      pengujian sistematis. Fokus pada keandalan dan keamanan sistem.</div>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- /carousel-inner -->
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+      </div><!-- /carousel -->
+
+      <!-- Dot indicators -->
+      <div class="carousel-dots">
+        <button class="dot-btn active" onclick="goSlide(0)"></button>
+        <button class="dot-btn" onclick="goSlide(1)"></button>
+      </div>
+
+    </div><!-- /team-carousel-outer -->
+  </section>
+
+  <!-- ================================================
+     FOOTER
+================================================ -->
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="row g-4">
+
+        <div class="col-lg-5">
+          <div class="footer-brand">CV &nbsp;<span>Bagas</span></div>
+          <div class="footer-tagline">Desain Grafis · Konten Kreator · Informatika</div>
+          <div class="footer-contact">
+            <a href="mailto:bagasadhielfirmansyah@gmail.com">
+              <i class="bi bi-envelope-fill"></i> <span class="__cf_email__"
+                data-cfemail="57353630362436333f3e323b313e253a3639242e363f17303a363e3b7934383a">bagasadhielfirmansyah@gmail.com</span>
+            </a>
+            <a href="https://wa.me/6285161866864">
+              <i class="bi bi-whatsapp"></i> 085161866864
+            </a>
+            <a href="https://instagram.com/dhiiluxx_">
+              <i class="bi bi-instagram"></i> @dhiiluxx_
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 offset-lg-1">
+          <div class="footer-nav-title">Navigasi</div>
+          <div class="footer-nav">
+            <a href="#tentang">Tentang Saya</a>
+            <a href="#pengalaman">Pengalaman &amp; Organisasi</a>
+            <a href="#pendidikan">Pendidikan</a>
+            <a href="#team">Tim Kami</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="footer-nav-title">Info</div>
+          <div class="footer-nav">
+            <a href="#">Universitas Amikom Purwokerto</a>
+            <a href="#">Prodi Informatika</a>
+            <a href="#">UKM Intermedia</a>
+            <a href="#">Sesi Praktikum PemWeb</a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <span>© 2025 Bagas Adhiel Firmansyah — All rights reserved</span>
+        <span>Dibuat dengan Bootstrap 5</span>
+      </div>
+    </div>
+    <div class="footer-stripe"></div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

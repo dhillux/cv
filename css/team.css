@@ -1,0 +1,190 @@
+/* ============================================
+   TEAM.CSS — section team & carousel
+============================================ */
+
+.team-section {
+  border-top: 5px solid var(--ink);
+  padding: 4rem 0 5rem;
+  position: relative;
+}
+
+.team-header-row {
+  max-width: 960px; margin: 0 auto;
+  padding: 0 1.5rem; margin-bottom: 2.5rem;
+}
+
+.team-section-label {
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent);
+  display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;
+}
+.team-section-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--divider);
+}
+
+.team-heading {
+  font-family: 'Playfair Display', serif; font-weight: 900;
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  line-height: 1.05; letter-spacing: -0.02em; color: var(--ink);
+}
+.team-heading span { color: var(--accent); }
+
+.team-sub {
+  font-size: 0.88rem; color: var(--muted);
+  max-width: 500px; margin-top: 0.5rem;
+}
+
+.team-hint {
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase;
+}
+
+/* ---- Team card ---- */
+.team-card-link {
+  display: block; text-decoration: none;
+  color: inherit; height: 100%;
+}
+
+.team-card {
+  background: white; border: 1px solid var(--divider);
+  border-top: 4px solid var(--ink);
+  padding: 1.75rem 1.5rem 1.5rem;
+  height: 100%; position: relative; overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s, border-top-color 0.25s;
+  cursor: pointer;
+}
+.team-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s;
+}
+.team-card-link:hover .team-card {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--accent);
+  border-top-color: var(--accent);
+}
+.team-card-link:hover .team-card::after { transform: scaleX(1); }
+
+/* Badge "Lihat CV" */
+.team-cv-badge {
+  position: absolute; top: 1rem; right: 1rem;
+  font-family: 'DM Mono', monospace; font-size: 0.55rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  background: var(--paper); border: 1px solid var(--divider);
+  color: var(--muted); padding: 0.2rem 0.55rem;
+  border-radius: 100px; transition: all 0.2s;
+}
+.team-card-link:hover .team-cv-badge {
+  background: var(--accent); border-color: var(--accent); color: white;
+}
+
+/* ---- Avatar team (foto + fallback) ---- */
+.team-avatar-wrap {
+  position: relative;
+  width: 80px; height: 80px;
+  margin-bottom: 1.1rem; flex-shrink: 0;
+}
+
+/* Foto asli */
+.team-avatar-img {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  object-fit: cover; object-position: center top;
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--accent);
+  display: block;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.team-card-link:hover .team-avatar-img {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--accent);
+}
+
+/* Fallback inisial */
+.team-avatar-fallback {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; font-weight: 900;
+  color: var(--paper);
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--accent);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.team-card-link:hover .team-avatar-fallback {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--accent);
+}
+
+.team-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 0.15rem;
+}
+.team-role {
+  font-family: 'DM Mono', monospace; font-size: 0.62rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 0.3rem;
+}
+.team-nim {
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  color: var(--muted); margin-bottom: 0.75rem;
+}
+.team-desc {
+  font-size: 0.82rem; color: #3a3028;
+  line-height: 1.7; margin-bottom: 0.85rem;
+}
+.team-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+.team-tag {
+  font-family: 'DM Mono', monospace; font-size: 0.58rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  border: 1px solid var(--divider); color: var(--muted);
+  padding: 0.15rem 0.5rem; border-radius: 2px; transition: all 0.2s;
+}
+.team-card-link:hover .team-tag { border-color: var(--ink); color: var(--ink); }
+
+/* ---- Carousel wrapper ---- */
+.team-carousel-outer {
+  max-width: 960px; margin: 0 auto;
+  padding: 0 2.5rem; position: relative;
+}
+
+#teamCarousel .carousel-control-prev,
+#teamCarousel .carousel-control-next {
+  width: 40px; height: 40px;
+  background: var(--ink); border-radius: 50%;
+  top: 40%; transform: translateY(-50%);
+  opacity: 1; transition: background 0.2s;
+  position: absolute;
+  display: flex; align-items: center; justify-content: center;
+}
+#teamCarousel .carousel-control-prev { left: 0; }
+#teamCarousel .carousel-control-next { right: 0; }
+#teamCarousel .carousel-control-prev:hover,
+#teamCarousel .carousel-control-next:hover { background: var(--accent); }
+#teamCarousel .carousel-control-prev-icon,
+#teamCarousel .carousel-control-next-icon { width: 14px; height: 14px; }
+
+/* Dot indicators */
+.carousel-dots {
+  display: flex; justify-content: center;
+  gap: 8px; margin-top: 1.5rem;
+}
+.dot-btn {
+  width: 9px; height: 9px; border-radius: 50%;
+  border: none; background: var(--divider);
+  cursor: pointer; transition: background 0.2s, transform 0.2s; padding: 0;
+}
+.dot-btn.active { background: var(--ink); transform: scale(1.3); }
+
+@media (max-width: 576px) {
+  .team-carousel-outer { padding: 0 2rem; }
+}
+
+/* Sembunyikan img jika src kosong, tampilkan fallback */
+.team-avatar-img[src=""] { display: none; }
+.team-avatar-img[src=""] ~ .team-avatar-fallback { display: flex !important; }

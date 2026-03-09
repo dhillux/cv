@@ -1,0 +1,82 @@
+/* ============================================
+   SECTIONS.CSS — about, experience, education
+============================================ */
+
+/* ---------- ABOUT ---------- */
+.about-box {
+  background: var(--ink); color: var(--paper);
+  padding: 2rem 2.25rem; position: relative; overflow: hidden;
+}
+.about-box::before {
+  content: '"'; font-family: 'Playfair Display', serif;
+  font-size: 10rem; line-height: 1;
+  position: absolute; top: -1rem; right: 1.5rem;
+  color: rgba(255,255,255,0.05); pointer-events: none;
+}
+.about-box p {
+  font-size: 0.94rem; line-height: 1.85;
+  position: relative; z-index: 1;
+}
+.about-box .highlight {
+  color: var(--gold); font-style: italic;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ---------- EXPERIENCE ---------- */
+.exp-item {
+  display: grid; grid-template-columns: 115px 1fr;
+  gap: 0 1.5rem; margin-bottom: 2rem; padding-bottom: 2rem;
+  border-bottom: 1px dashed var(--divider);
+  transition: transform 0.2s;
+}
+.exp-item:hover { transform: translateX(4px); }
+.exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.exp-year {
+  font-family: 'DM Mono', monospace; font-size: 0.68rem;
+  color: var(--muted); text-align: right;
+  padding-top: 0.25rem; letter-spacing: 0.06em; line-height: 1.6;
+}
+.exp-role {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 700;
+}
+.exp-company {
+  font-size: 0.78rem; font-family: 'DM Mono', monospace;
+  color: var(--accent); letter-spacing: 0.1em; margin-bottom: 0.4rem;
+}
+.exp-desc {
+  font-size: 0.87rem; color: #3a3028; line-height: 1.75;
+}
+.exp-desc ul { padding-left: 1.2rem; margin-top: 0.4rem; }
+.exp-desc ul li { margin-bottom: 0.2rem; }
+
+/* ---------- EDUCATION ---------- */
+.edu-card {
+  background: white; border: 1px solid var(--divider);
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.edu-card:hover {
+  box-shadow: 4px 4px 0 var(--gold);
+  transform: translate(-2px, -2px);
+}
+.edu-degree {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+}
+.edu-school {
+  font-size: 0.78rem; color: var(--accent);
+  font-family: 'DM Mono', monospace;
+}
+.edu-year {
+  font-size: 0.73rem; color: var(--muted);
+  font-family: 'DM Mono', monospace;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 576px) {
+  .exp-item { grid-template-columns: 1fr; }
+  .exp-year { text-align: left; margin-bottom: 0.25rem; }
+}
