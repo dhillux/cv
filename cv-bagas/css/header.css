@@ -1,0 +1,94 @@
+/* ============================================
+   HEADER.CSS — cv-header, name, contact pill, photo
+============================================ */
+
+.cv-header {
+  border-top: 5px solid var(--ink);
+  border-bottom: 1px solid var(--divider);
+  padding: 2.5rem 0 2rem;
+  margin-bottom: 3rem; position: relative;
+}
+.cv-header::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--gold) 60%, transparent 100%);
+}
+
+.name-block {
+  font-family: 'Playfair Display', serif; font-weight: 900;
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  line-height: 1.05; letter-spacing: -0.02em;
+}
+.name-block .first { color: var(--ink); }
+.name-block .last  { color: var(--accent); }
+
+.tagline {
+  font-family: 'DM Mono', monospace; font-size: 0.75rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--muted); margin-top: 0.75rem;
+}
+
+.contact-pill {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'DM Mono', monospace; font-size: 0.7rem;
+  background: var(--ink); color: var(--paper);
+  border-radius: 100px; padding: 0.3rem 0.8rem;
+  margin: 0.25rem 0.2rem; text-decoration: none;
+  transition: all 0.25s;
+}
+.contact-pill:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+
+/* ---- Foto profil header ---- */
+.profile-photo-wrap {
+  position: relative;
+  width: 160px; height: 160px;
+  margin: 0 auto;
+}
+
+/* Foto asli */
+.profile-photo {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  object-fit: cover; object-position: center top;
+  border: 4px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--accent);
+  display: block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.profile-photo-wrap:hover .profile-photo {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 var(--accent);
+}
+
+/* Fallback inisial (muncul jika foto gagal load) */
+.profile-photo-fallback {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5c3d2e 0%, #2c1a0e 100%);
+  border: 4px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--accent);
+  display: flex;
+  align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem; font-weight: 900;
+  color: var(--paper);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.profile-photo-wrap:hover .profile-photo-fallback {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 var(--accent);
+}
+
+/* Lencana dekoratif pojok kanan bawah */
+.profile-photo-wrap::after {
+  content: '';
+  position: absolute; bottom: 8px; right: -4px;
+  width: 22px; height: 22px;
+  background: var(--accent); border-radius: 50%;
+  border: 3px solid var(--paper);
+  box-shadow: 0 0 0 2px var(--ink);
+}
+
+/* Sembunyikan img jika src kosong, tampilkan fallback */
+.profile-photo[src=""] { display: none; }
+.profile-photo[src=""] ~ .profile-photo-fallback { display: flex !important; }
